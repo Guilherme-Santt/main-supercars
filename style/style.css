@@ -5,6 +5,12 @@
     font-weight: 340;
     font-style: normal;
 }
+body{
+    background-color: #ecececbb;
+}
+b{
+    font-weight: 500;  
+}
 /* CONTAINER */
 .container{
     display: grid; 
@@ -14,6 +20,9 @@
     color: rgba(4, 4, 5, 0.6);
     font-size: 1.5rem;
     grid-column: 2/4;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
 }
 
 /* HEADER */
@@ -22,7 +31,6 @@ header{
     background-color: #e4e4e4;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     min-height: 4rem;
-    margin-bottom: 50px;
     grid-column: 1/4;
 }
 nav{
@@ -46,7 +54,9 @@ nav ul li:hover{
     opacity: 1;
 }
 
+/* Fim header */
 
+/* Inicio janela scroll *top 5* */
 #janelscroll{
     overflow-y: scroll;
     scroll-behavior: smooth;
@@ -58,6 +68,7 @@ nav ul li:hover{
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 #janel-imgs img{
+    cursor: pointer;
     display: block;
     height: 25rem;
     width: 35rem;
@@ -68,14 +79,53 @@ nav ul li:hover{
     display: flex;
     justify-content: center;
 }
-.textSection{
+.dNone{
     display: none;
 }
 #textSection p{
     font-size: 1.3rem;
     color: rgba(4, 4, 5, 0.7)
 }  
+/* fim janela scroll */
 
+/* FORMULA 1 */
+#formula-1{
+    grid-column: 2/4;
+    display: flex;
+    gap: 50px;
+}
+#f1{
+    cursor: pointer;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    width: 450px;
+    height: 280px;
+    border-radius: 20px;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    position: relative; 
+}
+
+.fade-in {
+    opacity: 1; 
+    transform: translateX(0);
+    width: 500px;
+    height: 300px;
+}
+
+.fade-out {
+opacity: 0; 
+}
+/* fim fórmula 1 */
+
+/* tendencias */
+.tendencias{
+    grid-column: 2/4;
+}
+.tendencias-imgs img{
+    grid-column: 3/4;
+    width: 700px;
+    height: 400px;
+}
+/* fim tendencias */
 /* FOOTER */
 footer{
     position: fixed;
@@ -96,4 +146,3 @@ footer{
     to {
         transform: rotate(360deg);
     }
-}
