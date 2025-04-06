@@ -1,21 +1,29 @@
 *{
     padding: 0;
     margin: 0;
+    font-family: "Barlow", sans-serif;
+    font-weight: 340;
+    font-style: normal;
 }
+/* CONTAINER */
 .container{
     display: grid; 
-    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-columns: 10% 45% 35% 10%;    
 }   
-*{
-    margin: 0px;
-    padding: 0px;
+#tittle{
+    color: rgba(4, 4, 5, 0.6);
+    font-size: 1.5rem;
+    grid-column: 2/4;
 }
+
+/* HEADER */
 header{
+    margin-top: 30px;
     background-color: #e4e4e4;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     min-height: 4rem;
     margin-bottom: 50px;
-
+    grid-column: 1/4;
 }
 nav{
     display: flex;
@@ -29,58 +37,63 @@ nav ul{
     list-style: none;
 }
 nav ul li{
-    padding: 10px;
-    opacity: 0.8;
+    padding: 15px;
+    opacity: 0.7;
     cursor: pointer;
-    font-size: 1.3rem;
-    border-bottom: solid rgb(156, 156, 156) 1px;
+    font-size: 1.2rem;
 }
 nav ul li:hover{
     opacity: 1;
 }
-*{
-padding: 0;
-margin: 0;
-}
-.container{
-    display: grid; 
-    grid-template-columns: 25% 25% 25% 25%;
-}   
+
 
 #janelscroll{
     overflow-y: scroll;
     scroll-behavior: smooth;
     display: grid;
-    height: 30rem;
-    width: 22rem;
+    height: 25rem;
+    width: 35rem;
     grid-column: 2;
     border-radius: 20px;
-
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 #janel-imgs img{
     display: block;
-    height: 30rem;
-    width: 22rem;
+    height: 25rem;
+    width: 35rem;
 }
-#janel-text{
+#textSection{
     grid-column: 3;
+    text-align: left;
+    display: flex;
+    justify-content: center;
+}
+.textSection{
+    display: none;
+}
+#textSection p{
+    font-size: 1.3rem;
+    color: rgba(4, 4, 5, 0.7)
+}  
+
+/* FOOTER */
+footer{
+    position: fixed;
+}
+#logo{
+    position: fixed;
+    margin-top: 35%;
+    margin-left: 30px;
+    width: 70px;
+    height: 70px;
+    animation: rotate 5s linear infinite;
 }
 
-.textSection{ display: none;}
-
-#janelscroll{
-    overflow-y: scroll;
-    scroll-behavior: smooth;
-    display: grid;
-    height: 30rem;
-    width: 22rem;
-    grid-column: 2;
-}
-#janel-imgs img{
-    display: block;
-    height: 30rem;
-    width: 22rem;
-}
-#janel-text{
-    grid-column: 3;
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
