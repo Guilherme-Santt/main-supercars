@@ -45,41 +45,43 @@
 
             setTimeout(() => {
                 element.target.classList.remove('fade-in');
-            }, 300);
-        },300);
+            }, 50);
+        },50);
     });
 }())
 
 // TRANSIÇÃO IMAGENS BUGGATI
-const btnAnt = document.querySelector('#antBtn');
-const btnProx = document.querySelector('#proxBtn');
-let imgBugatti = document.querySelector('#img-bugatti');
-
-let linkImgs = [
-    "https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2024/06/BUGATTI_Tourbillon_16.jpg?w=880",
-    "https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2024/06/BUGATTI_Tourbillon_25.jpg?w=880",
-    "https://carro.blog.br/wp-content/uploads/2024/06/Bugatti-Tourbillon-7-jpg.webp",
-    "https://cdn.motor1.com/images/mgl/RqY32m/s1/bugatti-tourbillon.jpg",
+(function passBugati() {
+    const btnAnt = document.querySelector('#antBtn');
+    const btnProx = document.querySelector('#proxBtn');
+    let imgBugatti = document.querySelector('#img-bugatti');
     
-]
-
-function alterarImg(){
-    imgBugatti.src = linkImgs[currentIndex]
-}
-
-let currentIndex = 0;
-btnProx.addEventListener('click', () => {
-    currentIndex++;
-    if (currentIndex >= linkImgs.length) {
-        currentIndex = 0;
+    let linkImgs = [
+        "https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2024/06/BUGATTI_Tourbillon_16.jpg?w=880",
+        "https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2024/06/BUGATTI_Tourbillon_25.jpg?w=880",
+        "https://carro.blog.br/wp-content/uploads/2024/06/Bugatti-Tourbillon-7-jpg.webp",
+        "https://cdn.motor1.com/images/mgl/RqY32m/s1/bugatti-tourbillon.jpg",
+    ]
+    
+    function alterarImg(){
+        setTimeout(() => imgBugatti.src = linkImgs[currentIndex], 100)
     }
-    alterarImg()
-});
-
-btnAnt.addEventListener('click', () => {
-    currentIndex--;
-    if (currentIndex < 0) {
-        currentIndex = linkImgs.length - 1;
-    }
-    alterarImg()
-});
+    
+    let currentIndex = 0;
+    btnProx.addEventListener('click', () => {
+        currentIndex++;
+        if (currentIndex >= linkImgs.length) {
+            currentIndex = 0;
+        }
+        alterarImg()
+    });
+    
+    btnAnt.addEventListener('click', () => {
+        currentIndex--;
+        if (currentIndex < 0) {
+            currentIndex = linkImgs.length - 1;
+        }
+        alterarImg()
+    });
+    
+}())
